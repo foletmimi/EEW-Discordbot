@@ -1,2 +1,28 @@
-# EEW-Discordbot
-When an EEW is issued, the system using Websocket automatically sends it to Discord
+# 最初に
+作ろう作ろうおもって作ってなかったものを作っただけです。いつもの如く、誰かに使っていただければいいかなぁ程度で上げてます。  
+もしエラーや不具合があれば、issueに投稿してもらえれば、対応します。  
+開発環境は以下の通り
+* Windows 11 23H2
+* Browser: Google Chrome
+* VSCode(server)
+* Server: Ubuntu 22.04
+* node.js v20.9.0
+* npm v10.2.5
+# 使い方
+もうわかってるよっていう方は飛ばしていただいて大丈夫です。しかし、**npm run**等はないので注意してください  
+
+最初にnode_moduleを持ってきたいので次のコマンドを使用して引っ張ってきます
+```
+npm i
+```
+次に、config.jsonにdiscordのbot Tokenと、botのClientIdを書き込みます。  
+それが終われば最後に実行するだけです  
+```
+node index.js
+```
+これでbotが動きます。  
+動いたことを確認したら、deployslashcommands.jsを先ほどと同じように実行して、Botのグローバルコマンドとして設定します  
+これにより、多数のサーバに入ってもそのサーバごとに登録する必要なく扱えます  
+
+コマンドの実装が確認できたら、Discord側で/setupを使用してセットアップをします。これで、使い始められます。  
+以上で終了になります。お疲れ様でした。
